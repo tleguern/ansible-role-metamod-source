@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: ansible-role-metamod-source
+  author: Tristan Le Guern
+  description: Configure Metamod:Source plugin environment
+  company: Gwern
+  license: ISC
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+  galaxy_tags:
+    - source
+    - metamod
+dependencies: []

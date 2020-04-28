@@ -1,0 +1,5 @@
+---
+metamod_source_url: https://mms.alliedmods.net/mmsdrop
+metamod_source_branch: '1.10'
+__metamod_source_install_path: "{{ metamod_source_install_path | mandatory }}"
+__metamod_source_game: "{{ metamod_source_game | mandatory }}"
