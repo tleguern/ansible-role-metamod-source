@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: ansible-role-metamod-source
+  role_name: metamod-source
   author: Tristan Le Guern
   description: Configure Metamod:Source plugin environment
   company: Gwern
