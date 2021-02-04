@@ -6,8 +6,6 @@ An Ansible role that installs and configures [Metamod:Source](http://www.metamod
 
 An ansible role dedicated to the installation of SteamCMD such as [ansible-steamcmd](https://github.com/Aversiste/ansible-steamcmd) or any role providing the `{{ steamcmd_user }}` variable.
 
-An ansible role dedicated to the installation of a Source mod such as [ansible-role-cstrike-source](https://github.com/Aversiste/ansible-role-cstrike-source) or any role providing the `Restart {{ metamod_source_game }}` handler.
-
 ## Role Variables
 
 | Variable | Description | Default |
@@ -16,7 +14,6 @@ An ansible role dedicated to the installation of a Source mod such as [ansible-r
 | `metamod_source_url` | URL pointing to metamod releases | `https://mms.alliedmods.net/mmsdrop` |
 | `metamod_source_branch` | Release branch | `1.10` |
 | `metamod_source_install_path` | Installation directory | mandatory |
-| `metamod_source_game` | Source mod to configure | mandatory |
 
 # Dependencies
 
@@ -28,7 +25,6 @@ None
 - hosts: game
   vars:
     metamod_source_install_path: /home/steam/cstrike-source/cstrike
-    metamod_source_game: cstrike
   roles:
     - role: ansible-steamcmd
     - role: ansible-role-cstrike-source

@@ -38,5 +38,5 @@
       dest: "{{ __metamod_source_install_path }}/addons/metamod/VERSION"
       content: "{{ __metamod_source_filename.content }}"
       owner: "{{ steamcmd_user }}"
-    notify: "Restart {{ __metamod_source_game }}"
+    notify: "Restart source games"
   when: __metamod_source_current.rc != 0
