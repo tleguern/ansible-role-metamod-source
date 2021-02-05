@@ -16,7 +16,7 @@ An ansible role dedicated to the installation of SteamCMD such as [ansible-steam
 |----------|-------------|---------|
 | `steamcmd_user` | User name for steamcmd | `steam` |
 | `metamod_source_url` | URL pointing to metamod releases | `https://mms.alliedmods.net/mmsdrop` |
-| `metamod_source_branch` | Release branch | `1.10` |
+| `metamod_source_branch` | Release branch | `1.11` |
 | `metamod_source_install_path` | Installation directory | mandatory |
 
 # Dependencies
