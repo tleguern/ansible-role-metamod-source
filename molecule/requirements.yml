@@ -1,8 +1,8 @@
 ---
 roles:
-  - src: https://github.com/aversiste/ansible-steamcmd.git
-    name: aversiste.steamcmd
+  - src: https://github.com/tleguern/ansible-steamcmd.git
+    name: tleguern.steamcmd
     version: master
-  - src: https://github.com/aversiste/ansible-role-cstrike-source.git
-    name: aversiste.cstrike-source
+  - src: https://github.com/tleguern/ansible-role-cstrike-source.git
+    name: tleguern.cstrike-source
     version: master
