@@ -5,8 +5,14 @@ packages:
   - python3-wheel
   - python3-setuptools
   - acl
+  - build-essential # rcon dependencies
+  - cmake
+  - check
+  - libbsd-dev
+  - libglib2.0-dev
 sources:
   - https://git.sr.ht/~tleguern/ansible-role-metamod-source
+  - https://github.com/n0la/rcon
 environment:
   PATH: "/bin:/usr/bin/:/usr/local/bin:/home/build/.local/bin"
 tasks:
@@ -14,6 +20,12 @@ tasks:
       python3 -m pip install -qU pip
       python3 -m pip install -q ansible
       python3 -m pip install -q molecule==3.2.4
+  - rcon: |
+      mkdir rcon/build
+      cd rcon/build
+      cmake ..
+      make
+      sudo make install
   - molecule: |
       cd ansible-role-metamod-source
       molecule test -s debian-buster

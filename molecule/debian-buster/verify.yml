@@ -1,0 +1,24 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+  - name: Configure rcon
+    copy:
+      dest: ~/.rconrc
+      content: |
+        [srht]
+        hostname = 127.0.0.1
+        port = 27015
+        password = srht
+  - name: Query metamod version
+    shell: rcon --server srht meta version  | head -n 1
+    register: rcon
+  - assert:
+      that:
+        - rcon.rc == 0
+  - debug:
+      msg: "{{ rcon }}"
