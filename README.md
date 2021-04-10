@@ -8,7 +8,7 @@ Automatic testing is provided using molecule's delegated driver and https://buil
 
 ## Requirements
 
-An ansible role dedicated to the installation of SteamCMD such as [ansible-steamcmd](https://github.com/Aversiste/ansible-steamcmd) or any role providing the `{{ steamcmd_user }}` variable.
+An ansible role dedicated to the installation of SteamCMD such as [ansible-steamcmd](https://github.com/tleguern/ansible-steamcmd) or any role providing the `{{ steamcmd_user }}` variable.
 
 ## Role Variables
 
@@ -41,7 +41,7 @@ ISC
 
 ## Contributing
 
-Either send [send GitHub pull requests](https://github.com/Aversiste/ansible-role-metamod-source) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
+Either send [send GitHub pull requests](https://github.com/tleguern/ansible-role-metamod-source) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
 
 # Author Information
 
