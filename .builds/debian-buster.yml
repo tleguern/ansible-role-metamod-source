@@ -7,11 +7,13 @@ packages:
   - acl
 sources:
   - https://git.sr.ht/~tleguern/ansible-role-metamod-source
+environment:
+  PATH: "/bin:/usr/bin/:/usr/local/bin:/home/build/.local/bin"
 tasks:
   - pip: |
-      . ./.profile
-      pip3 -q install --user ansible molecule
+      python3 -m pip install -qU pip
+      python3 -m pip install -q ansible
+      python3 -m pip install -q molecule==3.2.4
   - molecule: |
-      . ./.profile
       cd ansible-role-metamod-source
       molecule test -s debian-buster
