@@ -6,19 +6,10 @@
   become_user: root
   become_method: sudo
   tasks:
-  - name: Configure rcon
-    copy:
-      dest: ~/.rconrc
-      content: |
-        [srht]
-        hostname = 127.0.0.1
-        port = 27015
-        password = srht
   - name: Query metamod version
-    shell: rcon --server srht meta version  | head -n 1
+    shell: rcon -p 27015 -H 127.0.0.1 -P srht meta version
     register: rcon
   - assert:
       that:
         - rcon.rc == 0
-  - debug:
-      msg: "{{ rcon }}"
+        - '"Metamod:Source version" in rcon.stdout'
