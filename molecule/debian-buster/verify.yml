@@ -2,9 +2,7 @@
 - name: Verify
   hosts: all
   gather_facts: false
-  become: yes
-  become_user: root
-  become_method: sudo
+  become: no
   tasks:
   - name: Query metamod version
     shell: rcon -p 27015 -H 127.0.0.1 -P srht meta version
