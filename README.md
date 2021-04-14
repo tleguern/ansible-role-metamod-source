@@ -4,7 +4,7 @@
 
 An Ansible role that installs and configures [Metamod:Source](http://www.metamodsource.net/).
 
-Automatic testing is provided using molecule's delegated driver and https://builds.sr.ht.
+Automatic testing is provided using molecule's delegated driver and <https://builds.sr.ht>.
 
 ## Requirements
 
@@ -19,11 +19,11 @@ An ansible role dedicated to the installation of SteamCMD such as [ansible-steam
 | `metamod_source_branch` | Release branch | `1.11` |
 | `metamod_source_install_path` | Installation directory | mandatory |
 
-# Dependencies
+## Dependencies
 
 None
 
-# Example Playbook
+## Example Playbook
 
 ```yaml
 - hosts: game
@@ -35,7 +35,7 @@ None
     - role: ansible-role-metamod-source
 ```
 
-# License
+## License
 
 ISC
 
@@ -43,6 +43,6 @@ ISC
 
 Either send [send GitHub pull requests](https://github.com/tleguern/ansible-role-metamod-source) or [send patches on SourceHut](https://lists.sr.ht/~tleguern/misc).
 
-# Author Information
+## Author Information
 
 Tristan Le Guern <tleguern@bouledef.eu>
