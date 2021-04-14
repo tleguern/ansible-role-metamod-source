@@ -15,28 +15,28 @@
 
 - name: Upgrade metamod source
   block:
-  - name: Download the latest version
-    get_url:
-      url: "{{ metamod_source_url }}/{{ metamod_source_branch }}/{{ __metamod_source_filename.content }}"
-      dest: /tmp
+    - name: Download the latest version
+      get_url:
+        url: "{{ metamod_source_url }}/{{ metamod_source_branch }}/{{ __metamod_source_filename.content }}"
+        dest: /tmp
 
-  - name: Extract the downloaded file
-    unarchive:
-      remote_src: yes
-      src: "/tmp/{{ __metamod_source_filename.content }}"
-      dest: "{{ __metamod_source_install_path }}/"
-      exclude: [ "addons/metamod/README.txt" ]
-      owner: "{{ steamcmd_user }}"
+    - name: Extract the downloaded file
+      unarchive:
+        remote_src: yes
+        src: "/tmp/{{ __metamod_source_filename.content }}"
+        dest: "{{ __metamod_source_install_path }}/"
+        exclude: [ "addons/metamod/README.txt" ]
+        owner: "{{ steamcmd_user }}"
 
-  - name: Remove the archive
-    file:
-      path: "/tmp/{{ __metamod_source_filename.content }}"
-      state: absent
+    - name: Remove the archive
+      file:
+        path: "/tmp/{{ __metamod_source_filename.content }}"
+        state: absent
 
-  - name: Write the current metamod source version
-    copy:
-      dest: "{{ __metamod_source_install_path }}/addons/metamod/VERSION"
-      content: "{{ __metamod_source_filename.content }}"
-      owner: "{{ steamcmd_user }}"
-    notify: "Restart source games"
+    - name: Write the current metamod source version
+      copy:
+        dest: "{{ __metamod_source_install_path }}/addons/metamod/VERSION"
+        content: "{{ __metamod_source_filename.content }}"
+        owner: "{{ steamcmd_user }}"
+      notify: "Restart source games"
   when: __metamod_source_current.rc != 0
