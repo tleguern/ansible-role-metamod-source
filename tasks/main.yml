@@ -27,6 +27,7 @@
         dest: "{{ __metamod_source_install_path }}/"
         exclude: [ "addons/metamod/README.txt" ]
         owner: "{{ steamcmd_user }}"
+        group: "{{ steamcmd_user }}"
 
     - name: Remove the archive
       file:
@@ -38,5 +39,6 @@
         dest: "{{ __metamod_source_install_path }}/addons/metamod/VERSION"
         content: "{{ __metamod_source_filename.content }}"
         owner: "{{ steamcmd_user }}"
+        group: "{{ steamcmd_user }}"
       notify: "Restart source games"
   when: __metamod_source_current.rc != 0
