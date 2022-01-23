@@ -7,7 +7,9 @@ galaxy_info:
   license: ISC
   min_ansible_version: 2.4
   platforms:
-    - name: Ubuntu
+    - name: Debian
+      versions:
+        - bullseye
   galaxy_tags:
     - source
     - metamod
