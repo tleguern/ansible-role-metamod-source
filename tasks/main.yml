@@ -12,6 +12,7 @@
   register: __metamod_source_current
   changed_when: false
   failed_when: false
+  when: not ansible_check_mode
 
 - name: Upgrade metamod source
   block:
@@ -41,4 +42,4 @@
         owner: "{{ steamcmd_user }}"
         group: "{{ steamcmd_user }}"
       notify: "Restart source games"
-  when: __metamod_source_current.rc != 0
+  when: not ansible_check_mode and __metamod_source_current.rc != 0
