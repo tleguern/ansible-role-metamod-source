@@ -1,0 +1,18 @@
+---
+argument_specs:
+  main:
+    short_description: An Ansible role that installs and configures Metamod:Source
+    author: Tristan Le Guern
+    options:
+      steamcmd_user:
+        description: User name for steamcmd
+        default: steam
+      metamod_source_url:
+        description: URL pointing to metamod releases
+        default: https://mms.alliedmods.net/mmsdrop
+      metamod_source_branch:
+        description: Release branch
+        default: "1.11"
+      metamod_source_install_path:
+        description: Installation directory
+        required: yes
